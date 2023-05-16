@@ -3,6 +3,7 @@ const { add, subtract, divide } = require("./utils");
 const fs = require("fs");
 const http = require("http");
 
+//ADD, SUBTRACT, DIVIDE OPERATIONS
 console.log("result of addition:", add(10, 20));
 console.log("result of subtraction:", subtract(100, 50));
 console.log("result of division:", divide(10, 10));
@@ -23,8 +24,7 @@ fs.appendFile(
     }
 );
 
-//READING FILE USING read()
-
+//CREATING SERVER & READING FILE USING read()
 http.createServer((req, res) => {
     fs.readFile("manuallyCreatedFile.html", (error, data) => {
         res.writeHead(200, { "Content-Type": "text/html" });
